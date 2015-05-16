@@ -9,6 +9,7 @@
 #import "ProjectListViewController.h"
 #import "ProjectListTableViewDataSource.h"
 #import "ProjectController.h"
+#import "Project.h"
 
 @interface ProjectListViewController ()
 
@@ -22,6 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.title = @"Projects";
+    
+    UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
+    self.navigationItem.rightBarButtonItem = addBarButton;
     
     self.dataSource = [ProjectListTableViewDataSource new];
     
@@ -71,6 +77,33 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Navigation Bar Methods
+
+- (void)addButtonPressed
+{
+    UIAlertController *addProjectAlert = [UIAlertController alertControllerWithTitle:@"Add new project?" message:@"Enter a title for your project." preferredStyle:UIAlertControllerStyleAlert];
+    
+    [addProjectAlert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Project Title";
+    }];
+    
+    [addProjectAlert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    
+    [addProjectAlert addAction:[UIAlertAction actionWithTitle:@"Add Project" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        NSString *projectTitle = ((UITextField *)addProjectAlert.textFields[0]).text;
+        
+        Project *project = [Project new];
+        project.title = projectTitle;
+        
+        [[ProjectController sharedInstance] addProject:project];
+        
+        [self.tableView reloadData];
+    }]];
+    
+    [self.navigationController presentViewController:addProjectAlert animated:YES completion:nil];
 }
 
 @end
