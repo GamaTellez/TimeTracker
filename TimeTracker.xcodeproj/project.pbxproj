@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		3489DA011B06FBC600BD1505 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA001B06FBC600BD1505 /* main.m */; };
 		3489DA041B06FBC600BD1505 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA031B06FBC600BD1505 /* AppDelegate.m */; };
-		3489DA071B06FBC600BD1505 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA061B06FBC600BD1505 /* ViewController.m */; };
+		3489DA071B06FBC600BD1505 /* ProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA061B06FBC600BD1505 /* ProjectListViewController.m */; };
 		3489DA0C1B06FBC600BD1505 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3489DA0B1B06FBC600BD1505 /* Images.xcassets */; };
 		3489DA0F1B06FBC600BD1505 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3489DA0D1B06FBC600BD1505 /* LaunchScreen.xib */; };
 		3489DA1B1B06FBC600BD1505 /* TimeTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA1A1B06FBC600BD1505 /* TimeTrackerTests.m */; };
 		3489DA261B06FDB900BD1505 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA251B06FDB900BD1505 /* WorkPeriod.m */; };
+		3489DA291B06FE9700BD1505 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA281B06FE9700BD1505 /* Project.m */; };
+		3489DA2C1B07032F00BD1505 /* ProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA2B1B07032F00BD1505 /* ProjectDetailViewController.m */; };
+		3489DA2F1B0703AB00BD1505 /* ProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA2E1B0703AB00BD1505 /* ProjectController.m */; };
+		3489DA321B0707CC00BD1505 /* ProjectListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA311B0707CC00BD1505 /* ProjectListTableViewDataSource.m */; };
+		3489DA351B071C6300BD1505 /* AddWorkPeriodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA341B071C6300BD1505 /* AddWorkPeriodViewController.m */; };
+		3489DA381B0724EC00BD1505 /* WorkPeriodTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA371B0724EC00BD1505 /* WorkPeriodTableViewDataSource.m */; };
+		3489DA3A1B07311800BD1505 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3489DA391B07311800BD1505 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +39,8 @@
 		3489DA001B06FBC600BD1505 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3489DA021B06FBC600BD1505 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3489DA031B06FBC600BD1505 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3489DA051B06FBC600BD1505 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3489DA061B06FBC600BD1505 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3489DA051B06FBC600BD1505 /* ProjectListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectListViewController.h; sourceTree = "<group>"; };
+		3489DA061B06FBC600BD1505 /* ProjectListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectListViewController.m; sourceTree = "<group>"; };
 		3489DA0B1B06FBC600BD1505 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3489DA0E1B06FBC600BD1505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3489DA141B06FBC600BD1505 /* TimeTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +48,19 @@
 		3489DA1A1B06FBC600BD1505 /* TimeTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeTrackerTests.m; sourceTree = "<group>"; };
 		3489DA241B06FDB900BD1505 /* WorkPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriod.h; sourceTree = "<group>"; };
 		3489DA251B06FDB900BD1505 /* WorkPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriod.m; sourceTree = "<group>"; };
+		3489DA271B06FE9700BD1505 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
+		3489DA281B06FE9700BD1505 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
+		3489DA2A1B07032F00BD1505 /* ProjectDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDetailViewController.h; sourceTree = "<group>"; };
+		3489DA2B1B07032F00BD1505 /* ProjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailViewController.m; sourceTree = "<group>"; };
+		3489DA2D1B0703AB00BD1505 /* ProjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectController.h; sourceTree = "<group>"; };
+		3489DA2E1B0703AB00BD1505 /* ProjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectController.m; sourceTree = "<group>"; };
+		3489DA301B0707CC00BD1505 /* ProjectListTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectListTableViewDataSource.h; sourceTree = "<group>"; };
+		3489DA311B0707CC00BD1505 /* ProjectListTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectListTableViewDataSource.m; sourceTree = "<group>"; };
+		3489DA331B071C6300BD1505 /* AddWorkPeriodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddWorkPeriodViewController.h; sourceTree = "<group>"; };
+		3489DA341B071C6300BD1505 /* AddWorkPeriodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddWorkPeriodViewController.m; sourceTree = "<group>"; };
+		3489DA361B0724EC00BD1505 /* WorkPeriodTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriodTableViewDataSource.h; sourceTree = "<group>"; };
+		3489DA371B0724EC00BD1505 /* WorkPeriodTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriodTableViewDataSource.m; sourceTree = "<group>"; };
+		3489DA391B07311800BD1505 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3489DA3A1B07311800BD1505 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +85,7 @@
 		3489D9F21B06FBC500BD1505 = {
 			isa = PBXGroup;
 			children = (
+				3489DA391B07311800BD1505 /* MessageUI.framework */,
 				3489D9FD1B06FBC500BD1505 /* TimeTracker */,
 				3489DA171B06FBC600BD1505 /* TimeTrackerTests */,
 				3489D9FC1B06FBC500BD1505 /* Products */,
@@ -84,8 +106,20 @@
 			children = (
 				3489DA021B06FBC600BD1505 /* AppDelegate.h */,
 				3489DA031B06FBC600BD1505 /* AppDelegate.m */,
-				3489DA051B06FBC600BD1505 /* ViewController.h */,
-				3489DA061B06FBC600BD1505 /* ViewController.m */,
+				3489DA051B06FBC600BD1505 /* ProjectListViewController.h */,
+				3489DA061B06FBC600BD1505 /* ProjectListViewController.m */,
+				3489DA301B0707CC00BD1505 /* ProjectListTableViewDataSource.h */,
+				3489DA311B0707CC00BD1505 /* ProjectListTableViewDataSource.m */,
+				3489DA2D1B0703AB00BD1505 /* ProjectController.h */,
+				3489DA2E1B0703AB00BD1505 /* ProjectController.m */,
+				3489DA2A1B07032F00BD1505 /* ProjectDetailViewController.h */,
+				3489DA2B1B07032F00BD1505 /* ProjectDetailViewController.m */,
+				3489DA361B0724EC00BD1505 /* WorkPeriodTableViewDataSource.h */,
+				3489DA371B0724EC00BD1505 /* WorkPeriodTableViewDataSource.m */,
+				3489DA331B071C6300BD1505 /* AddWorkPeriodViewController.h */,
+				3489DA341B071C6300BD1505 /* AddWorkPeriodViewController.m */,
+				3489DA271B06FE9700BD1505 /* Project.h */,
+				3489DA281B06FE9700BD1505 /* Project.m */,
 				3489DA241B06FDB900BD1505 /* WorkPeriod.h */,
 				3489DA251B06FDB900BD1505 /* WorkPeriod.m */,
 				3489DA0B1B06FBC600BD1505 /* Images.xcassets */,
@@ -220,10 +254,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3489DA071B06FBC600BD1505 /* ViewController.m in Sources */,
+				3489DA321B0707CC00BD1505 /* ProjectListTableViewDataSource.m in Sources */,
+				3489DA071B06FBC600BD1505 /* ProjectListViewController.m in Sources */,
+				3489DA351B071C6300BD1505 /* AddWorkPeriodViewController.m in Sources */,
 				3489DA261B06FDB900BD1505 /* WorkPeriod.m in Sources */,
 				3489DA041B06FBC600BD1505 /* AppDelegate.m in Sources */,
+				3489DA2F1B0703AB00BD1505 /* ProjectController.m in Sources */,
+				3489DA381B0724EC00BD1505 /* WorkPeriodTableViewDataSource.m in Sources */,
+				3489DA291B06FE9700BD1505 /* Project.m in Sources */,
 				3489DA011B06FBC600BD1505 /* main.m in Sources */,
+				3489DA2C1B07032F00BD1505 /* ProjectDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +446,7 @@
 				3489DA201B06FBC600BD1505 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3489DA211B06FBC600BD1505 /* Build configuration list for PBXNativeTarget "TimeTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +455,7 @@
 				3489DA231B06FBC600BD1505 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
