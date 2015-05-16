@@ -10,6 +10,8 @@
 
 @interface ProjectDetailViewController ()
 
+@property (strong, nonatomic) UITableView *tableView;
+
 @end
 
 @implementation ProjectDetailViewController
@@ -17,8 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = self.project.title;
-    self.view.backgroundColor = [UIColor purpleColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
     
@@ -65,6 +66,82 @@
                                               attribute:NSLayoutAttributeRight
                                              multiplier:1.0
                                                constant:0.0];
+    [self.view addConstraint:constraint];
+    
+    UITextField *textField = [UITextField new];
+    textField.textAlignment = NSTextAlignmentCenter;
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    [textField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    textField.text = self.project.title;
+    textField.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
+    [self.view addSubview:textField];
+    
+    
+    constraint = [NSLayoutConstraint constraintWithItem:textField
+                                              attribute:NSLayoutAttributeTop
+                                              relatedBy:NSLayoutRelationEqual
+                                                 toItem:self.view
+                                              attribute:NSLayoutAttributeTop
+                                             multiplier:1.0
+                                               constant:64.0 + 8.0];
+    [self.view addConstraint:constraint];
+    
+    constraint = [NSLayoutConstraint constraintWithItem:textField
+                                              attribute:NSLayoutAttributeLeft
+                                              relatedBy:NSLayoutRelationEqual
+                                                 toItem:self.view
+                                              attribute:NSLayoutAttributeLeft
+                                             multiplier:1.0
+                                               constant:8.0];
+    [self.view addConstraint:constraint];
+    
+    constraint = [NSLayoutConstraint constraintWithItem:textField
+                                              attribute:NSLayoutAttributeRight
+                                              relatedBy:NSLayoutRelationEqual
+                                                 toItem:self.view
+                                              attribute:NSLayoutAttributeRight
+                                             multiplier:1.0
+                                               constant:-8.0];
+    [self.view addConstraint:constraint];
+    
+    self.tableView = [UITableView new];
+    [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:self.tableView];
+    
+    constraint = [NSLayoutConstraint constraintWithItem:self.tableView
+                                             attribute:NSLayoutAttributeTop
+                                             relatedBy:NSLayoutRelationEqual
+                                                toItem:textField
+                                             attribute:NSLayoutAttributeBottom
+                                            multiplier:1.0
+                                              constant:8.0];
+    [self.view addConstraint:constraint];
+    
+    constraint = [NSLayoutConstraint constraintWithItem:self.tableView
+                                             attribute:NSLayoutAttributeLeft
+                                             relatedBy:NSLayoutRelationEqual
+                                                toItem:self.view
+                                             attribute:NSLayoutAttributeLeft
+                                            multiplier:1.0
+                                              constant:0.0];
+    [self.view addConstraint:constraint];
+    
+    constraint = [NSLayoutConstraint constraintWithItem:self.tableView
+                                             attribute:NSLayoutAttributeRight
+                                             relatedBy:NSLayoutRelationEqual
+                                                toItem:self.view
+                                             attribute:NSLayoutAttributeRight
+                                            multiplier:1.0
+                                              constant:0.0];
+    [self.view addConstraint:constraint];
+    
+    constraint = [NSLayoutConstraint constraintWithItem:self.tableView
+                                             attribute:NSLayoutAttributeBottom
+                                             relatedBy:NSLayoutRelationEqual
+                                                toItem:toolbar
+                                             attribute:NSLayoutAttributeTop
+                                            multiplier:1.0
+                                              constant:0.0];
     [self.view addConstraint:constraint];
 }
 
