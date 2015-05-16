@@ -21,6 +21,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [ProjectController new];
+        sharedInstance.projectsArray = [NSArray new];
     });
     
     return sharedInstance;
