@@ -9,8 +9,9 @@
 #import "ProjectDetailViewController.h"
 #import "AddWorkPeriodViewController.h"
 #import "WorkPeriodTableViewDataSource.h"
+#import <MessageUI/MessageUI.h>
 
-@interface ProjectDetailViewController () <UITextFieldDelegate>
+@interface ProjectDetailViewController () <UITextFieldDelegate, MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) WorkPeriodTableViewDataSource *dataSource;
@@ -255,6 +256,51 @@
 
 - (void)reportButtonPressed
 {
+    if (![MFMailComposeViewController canSendMail]) {
+        UIAlertController *cantSentMailAlert = [UIAlertController alertControllerWithTitle:@"Can't Send Mail" message:@"You may need to setup Mail account in Settings." preferredStyle:UIAlertControllerStyleAlert];
+        
+        [cantSentMailAlert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        [self.navigationController presentViewController:cantSentMailAlert animated:YES completion:nil];
+    }
+    else
+    {
+        NSString *messageBodyString = @"";
+        NSDateFormatter *dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateStyle = NSDateFormatterShortStyle;
+        dateFormatter.timeStyle = NSDateFormatterShortStyle;
+        
+        for (WorkPeriod *workPeriod in self.project.workPeriodsArray)
+        {
+            NSString *startDateString = [dateFormatter stringFromDate:workPeriod.startDate];
+            NSString *endDateString = [dateFormatter stringFromDate:workPeriod.endDate];
+            
+            NSString *dateString = [NSString stringWithFormat:@"%@ to %@", startDateString, endDateString];
+            NSString *memoString = [NSString stringWithFormat:@" -- %@<br>", workPeriod.memo];
+            
+            messageBodyString = [messageBodyString stringByAppendingString:[dateString stringByAppendingString:memoString]];
+        }
+        
+        NSString *totalTimeString = [NSString stringWithFormat:@"<br>Total Time: %@", [self.project totalProjectTimeString]];
+        
+        [messageBodyString stringByAppendingString:totalTimeString];
+        
+        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+        mailViewController.mailComposeDelegate = self;
+        
+        
+        [mailViewController setSubject:[NSString stringWithFormat:@"Hours for %@", self.project.title]];
+        [mailViewController setMessageBody:messageBodyString isHTML:YES];
+        
+        [self.navigationController presentViewController:mailViewController animated:YES completion:nil];
+    }
+}
+
+#pragma mark - MFMailComposeViewController Delegate Methods
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     
 }
 
