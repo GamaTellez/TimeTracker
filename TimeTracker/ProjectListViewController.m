@@ -25,11 +25,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    //Setup navigation bar
     self.title = @"Projects";
     
     UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
     self.navigationItem.rightBarButtonItem = addBarButton;
     
+    
+    
+    //TableView and DataSource
     self.dataSource = [ProjectListTableViewDataSource new];
     
     self.tableView = [UITableView new];

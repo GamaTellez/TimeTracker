@@ -21,9 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.title = @"Add Work Period";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    //Navigation bar
+    self.title = @"Add Work Period";
     
     UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonPressed)];
     self.navigationItem.leftBarButtonItem = cancelBarButton;
@@ -31,6 +32,8 @@
     UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonPressed)];
     self.navigationItem.rightBarButtonItem = doneBarButton;
     
+    
+    //Start date header (Green)
     UILabel *startDateLabel = [UILabel new];
     [startDateLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     startDateLabel.text = @"  Select Clock-In Time";
@@ -64,6 +67,8 @@
                                                constant:0.0];
     [self.view addConstraint:constraint];
     
+    
+    //Start date picker
     self.startDatePicker = [UIDatePicker new];
     [self.startDatePicker setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:self.startDatePicker];
@@ -77,6 +82,8 @@
                                                constant:0.0];
     [self.view addConstraint:constraint];
     
+    
+    //End date header (red)
     UILabel *endDateLabel = [UILabel new];
     [endDateLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     endDateLabel.text = @"  Select Clock-Out Time";
@@ -110,6 +117,8 @@
                                                constant:0.0];
     [self.view addConstraint:constraint];
     
+    
+    //End date picker
     self.endDatePicker = [UIDatePicker new];
     [self.endDatePicker setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:self.endDatePicker];
