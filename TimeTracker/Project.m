@@ -18,6 +18,11 @@
 
 - (void)addWorkPeriod:(WorkPeriod *)workPeriod
 {
+    if (!self.workPeriodsArray)
+    {
+        self.workPeriodsArray = [NSArray new];
+    }
+    
     NSMutableArray *mutableWorkPeriodArray = [self.workPeriodsArray mutableCopy];
     
     [mutableWorkPeriodArray addObject:workPeriod];
@@ -66,7 +71,6 @@
     }
     
     return [NSString stringWithFormat:@"%d:%@", numberOfMintes, secondsString];
-    
 }
 
 @end
