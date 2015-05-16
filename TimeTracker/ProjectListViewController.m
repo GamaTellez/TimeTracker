@@ -39,41 +39,41 @@
     
     [self.view addSubview:self.tableView];
     
-    NSLayoutConstraint *contraint = [NSLayoutConstraint constraintWithItem:self.tableView
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.tableView
                                                                  attribute:NSLayoutAttributeTop
                                                                  relatedBy:NSLayoutRelationEqual
                                                                     toItem:self.view
                                                                  attribute:NSLayoutAttributeTop
                                                                 multiplier:1.0
                                                                   constant:0.0];
-    [self.view addConstraint:contraint];
+    [self.view addConstraint:constraint];
     
-    contraint = [NSLayoutConstraint constraintWithItem:self.tableView
+    constraint = [NSLayoutConstraint constraintWithItem:self.tableView
                                              attribute:NSLayoutAttributeLeft
                                              relatedBy:NSLayoutRelationEqual
                                                 toItem:self.view
                                              attribute:NSLayoutAttributeLeft
                                             multiplier:1.0
                                               constant:0.0];
-    [self.view addConstraint:contraint];
+    [self.view addConstraint:constraint];
     
-    contraint = [NSLayoutConstraint constraintWithItem:self.tableView
+    constraint = [NSLayoutConstraint constraintWithItem:self.tableView
                                              attribute:NSLayoutAttributeRight
                                              relatedBy:NSLayoutRelationEqual
                                                 toItem:self.view
                                              attribute:NSLayoutAttributeRight
                                             multiplier:1.0
                                               constant:0.0];
-    [self.view addConstraint:contraint];
+    [self.view addConstraint:constraint];
     
-    contraint = [NSLayoutConstraint constraintWithItem:self.tableView
+    constraint = [NSLayoutConstraint constraintWithItem:self.tableView
                                              attribute:NSLayoutAttributeBottom
                                              relatedBy:NSLayoutRelationEqual
                                                 toItem:self.view
                                              attribute:NSLayoutAttributeBottom
                                             multiplier:1.0
                                               constant:0.0];
-    [self.view addConstraint:contraint];
+    [self.view addConstraint:constraint];
 }
 
 - (void)didReceiveMemoryWarning {
