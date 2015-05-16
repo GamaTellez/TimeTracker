@@ -45,7 +45,7 @@ static NSString *cellID = @"cellID";
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         WorkPeriod *workPeriod = self.project.workPeriodsArray[indexPath.row];
-        [self.project removeWorkPeriod:workPeriod];
+        [self.project deleteWorkPeriod:workPeriod];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }

@@ -30,7 +30,7 @@
     self.workPeriodsArray = [mutableWorkPeriodArray copy];
 }
 
-- (void)removeWorkPeriod:(WorkPeriod *)workPeriod
+- (void)deleteWorkPeriod:(WorkPeriod *)workPeriod
 {
     NSMutableArray *mutableWorkPeriodArray = [self.workPeriodsArray mutableCopy];
     

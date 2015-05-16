@@ -16,7 +16,7 @@
 @property (strong, nonatomic, readonly) NSArray *workPeriodsArray;
 
 - (void)addWorkPeriod:(WorkPeriod *)workPeriod;
-- (void)removeWorkPeriod:(WorkPeriod *)workPeriod;
+- (void)deleteWorkPeriod:(WorkPeriod *)workPeriod;
 - (NSTimeInterval)calculateProjectTime;
 - (NSString *)totalProjectTimeString;
 
