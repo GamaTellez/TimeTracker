@@ -13,6 +13,7 @@
 		3489DA0C1B06FBC600BD1505 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3489DA0B1B06FBC600BD1505 /* Images.xcassets */; };
 		3489DA0F1B06FBC600BD1505 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3489DA0D1B06FBC600BD1505 /* LaunchScreen.xib */; };
 		3489DA1B1B06FBC600BD1505 /* TimeTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA1A1B06FBC600BD1505 /* TimeTrackerTests.m */; };
+		3489DA261B06FDB900BD1505 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489DA251B06FDB900BD1505 /* WorkPeriod.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,8 @@
 		3489DA141B06FBC600BD1505 /* TimeTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3489DA191B06FBC600BD1505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3489DA1A1B06FBC600BD1505 /* TimeTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeTrackerTests.m; sourceTree = "<group>"; };
+		3489DA241B06FDB900BD1505 /* WorkPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriod.h; sourceTree = "<group>"; };
+		3489DA251B06FDB900BD1505 /* WorkPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriod.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				3489DA031B06FBC600BD1505 /* AppDelegate.m */,
 				3489DA051B06FBC600BD1505 /* ViewController.h */,
 				3489DA061B06FBC600BD1505 /* ViewController.m */,
+				3489DA241B06FDB900BD1505 /* WorkPeriod.h */,
+				3489DA251B06FDB900BD1505 /* WorkPeriod.m */,
 				3489DA0B1B06FBC600BD1505 /* Images.xcassets */,
 				3489DA0D1B06FBC600BD1505 /* LaunchScreen.xib */,
 				3489D9FE1B06FBC500BD1505 /* Supporting Files */,
@@ -216,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3489DA071B06FBC600BD1505 /* ViewController.m in Sources */,
+				3489DA261B06FDB900BD1505 /* WorkPeriod.m in Sources */,
 				3489DA041B06FBC600BD1505 /* AppDelegate.m in Sources */,
 				3489DA011B06FBC600BD1505 /* main.m in Sources */,
 			);
