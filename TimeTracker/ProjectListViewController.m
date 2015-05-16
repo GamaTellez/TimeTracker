@@ -10,8 +10,9 @@
 #import "ProjectListTableViewDataSource.h"
 #import "ProjectController.h"
 #import "Project.h"
+#import "ProjectDetailViewController.h"
 
-@interface ProjectListViewController ()
+@interface ProjectListViewController () <UITableViewDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) ProjectListTableViewDataSource *dataSource;
@@ -34,6 +35,7 @@
     self.tableView = [UITableView new];
     [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.tableView.dataSource = self.dataSource;
+    self.tableView.delegate = self;
     
     [self.view addSubview:self.tableView];
     
@@ -106,4 +108,23 @@
     [self.navigationController presentViewController:addProjectAlert animated:YES completion:nil];
 }
 
+#pragma mark - UITableView Delegate Methods
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    Project *project = [ProjectController sharedInstance].projectsArray[indexPath.row];
+    
+    ProjectDetailViewController *detailViewController = [ProjectDetailViewController new];
+    detailViewController.project = project;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
 @end
+
+
+
+
+
+
