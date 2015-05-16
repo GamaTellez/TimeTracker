@@ -56,9 +56,13 @@
 {
     NSTimeInterval totalNumberOfSeconds = [self calculateProjectTime];
     
-    NSInteger numberOfMintes = totalNumberOfSeconds / 60;
+    NSInteger numberOfHours =  floor(totalNumberOfSeconds / 3600);
     
-    NSInteger numberOfSecondsRemaining = totalNumberOfSeconds - (numberOfMintes * 60);
+    NSInteger numberOfSecondsRemaining = totalNumberOfSeconds - (numberOfHours * 3600);
+    
+    NSInteger numberOfMinutes = floor(numberOfSecondsRemaining / 60);
+    
+    numberOfSecondsRemaining = numberOfSecondsRemaining - (numberOfMinutes * 60);
     
     NSString *secondsString;
     if (numberOfSecondsRemaining < 10)
@@ -70,7 +74,17 @@
         secondsString = [NSString stringWithFormat:@"%d", numberOfSecondsRemaining];
     }
     
-    return [NSString stringWithFormat:@"%d:%@", numberOfMintes, secondsString];
+    NSString *minutesString;
+    if (numberOfMinutes < 10)
+    {
+        minutesString = [NSString stringWithFormat:@"0%d", numberOfMinutes];
+    }
+    else
+    {
+        minutesString = [NSString stringWithFormat:@"%d", numberOfMinutes];
+    }
+    
+    return [NSString stringWithFormat:@"%d:%@:%@", numberOfHours, minutesString, secondsString];
 }
 
 @end
