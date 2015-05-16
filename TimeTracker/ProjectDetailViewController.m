@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) WorkPeriodTableViewDataSource *dataSource;
+@property (strong, nonatomic) NSDate *clockInDate;
 
 @end
 
@@ -185,11 +186,69 @@
 
 - (void)clockInButtonPressed
 {
+    if (self.clockInDate) {
+        UIAlertController *alreadyClockedInAlert = [UIAlertController alertControllerWithTitle:@"Already Clocked In" message:@"You are already clocked in. Clock out first." preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alreadyClockedInAlert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        [self.navigationController presentViewController:alreadyClockedInAlert animated:YES completion:nil];
+    }
+    else
+    {
+        self.navigationController.navigationBar.barTintColor = [UIColor greenColor];
+        self.title = @"Clocked In";
+        self.clockInDate = [NSDate date];
+    }
     
 }
 
 - (void)clockOutButtonPressed
 {
+    if (!self.clockInDate) {
+        UIAlertController *notClockedInAlert = [UIAlertController alertControllerWithTitle:@"Not Clocked In" message:@"You are not clocked in. Either clock in or consider adding a work period with clock in and out times." preferredStyle:UIAlertControllerStyleAlert];
+        
+        [notClockedInAlert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        [self.navigationController presentViewController:notClockedInAlert animated:YES completion:nil];
+    }
+    else
+    {
+        self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+        self.title = @"Clocked Out";
+        
+        WorkPeriod *workPeriod = [WorkPeriod new];
+        workPeriod.startDate = self.clockInDate;
+        workPeriod.endDate = [NSDate date];
+        
+        UIAlertController *addMemoAlert = [UIAlertController alertControllerWithTitle:@"Add memo?" message:@"Enter a memo for your work period." preferredStyle:UIAlertControllerStyleAlert];
+        
+        [addMemoAlert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"Memo";
+        }];
+        
+        [addMemoAlert addAction:[UIAlertAction actionWithTitle:@"No Memo" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            workPeriod.memo = @"";
+            [self.project addWorkPeriod:workPeriod];
+            
+            self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+            self.title = @"";
+            [self.tableView reloadData];
+        }]];
+        
+        [addMemoAlert addAction:[UIAlertAction actionWithTitle:@"Add Work Period" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+            workPeriod.memo = ((UITextField *)addMemoAlert.textFields[0]).text;
+            [self.project addWorkPeriod:workPeriod];
+            
+            self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+            self.title = @"";
+            [self.tableView reloadData];
+        }]];
+        
+        [self.navigationController presentViewController:addMemoAlert animated:YES completion:nil];
+        
+        self.clockInDate = nil;
+    }
     
 }
 
