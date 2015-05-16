@@ -8,10 +8,12 @@
 
 #import "ProjectDetailViewController.h"
 #import "AddWorkPeriodViewController.h"
+#import "WorkPeriodTableViewDataSource.h"
 
 @interface ProjectDetailViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) WorkPeriodTableViewDataSource *dataSource;
 
 @end
 
@@ -22,6 +24,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
+    //Toolbar
     UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
     
     UIBarButtonItem *flexSpace1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
@@ -69,6 +73,9 @@
                                                constant:0.0];
     [self.view addConstraint:constraint];
     
+    
+    
+    //TextField
     UITextField *textField = [UITextField new];
     textField.textAlignment = NSTextAlignmentCenter;
     textField.borderStyle = UITextBorderStyleRoundedRect;
@@ -106,7 +113,14 @@
                                                constant:-8.0];
     [self.view addConstraint:constraint];
     
+    
+    
+    //TableView and DataSource
+    self.dataSource = [WorkPeriodTableViewDataSource new];
+    self.dataSource.project = self.project;
+    
     self.tableView = [UITableView new];
+    self.tableView.dataSource = self.dataSource;
     [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:self.tableView];
     
@@ -147,6 +161,11 @@
     [self.view addConstraint:constraint];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -156,8 +175,11 @@
 
 - (void)addButtonPressed
 {
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[AddWorkPeriodViewController new]];
+    AddWorkPeriodViewController *addWorkPeriodViewController = [AddWorkPeriodViewController new];
+    addWorkPeriodViewController.project = self.project;
     
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addWorkPeriodViewController];
+
     [self.navigationController presentViewController:navigationController animated:YES completion:nil];
 }
 
