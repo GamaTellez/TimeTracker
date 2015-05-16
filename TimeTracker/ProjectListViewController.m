@@ -40,6 +40,7 @@
     [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self;
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
     
     [self.view addSubview:self.tableView];
     

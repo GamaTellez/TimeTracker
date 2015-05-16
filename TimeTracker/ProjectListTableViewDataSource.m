@@ -35,5 +35,16 @@ static NSString *cellID = @"cellID";
     
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        Project *project = [ProjectController sharedInstance].projectsArray[indexPath.row];
+        [[ProjectController sharedInstance] deleteProject:project];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
                 
 @end

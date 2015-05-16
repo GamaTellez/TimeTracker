@@ -40,4 +40,15 @@ static NSString *cellID = @"cellID";
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        WorkPeriod *workPeriod = self.project.workPeriodsArray[indexPath.row];
+        [self.project removeWorkPeriod:workPeriod];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
 @end

@@ -123,6 +123,7 @@
     self.tableView = [UITableView new];
     self.tableView.dataSource = self.dataSource;
     [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
     [self.view addSubview:self.tableView];
     
     constraint = [NSLayoutConstraint constraintWithItem:self.tableView
