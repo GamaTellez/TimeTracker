@@ -47,4 +47,26 @@
     return totalTime;
 }
 
+- (NSString *)totalProjectTimeString
+{
+    NSTimeInterval totalNumberOfSeconds = [self calculateProjectTime];
+    
+    NSInteger numberOfMintes = totalNumberOfSeconds / 60;
+    
+    NSInteger numberOfSecondsRemaining = totalNumberOfSeconds - (numberOfMintes * 60);
+    
+    NSString *secondsString;
+    if (numberOfSecondsRemaining < 10)
+    {
+        secondsString = [NSString stringWithFormat:@"0%d", numberOfSecondsRemaining];
+    }
+    else
+    {
+        secondsString = [NSString stringWithFormat:@"%d", numberOfSecondsRemaining];
+    }
+    
+    return [NSString stringWithFormat:@"%d:%@", numberOfMintes, secondsString];
+    
+}
+
 @end

@@ -18,5 +18,6 @@
 - (void)addWorkPeriod:(WorkPeriod *)workPeriod;
 - (void)removeWorkPeriod:(WorkPeriod *)workPeriod;
 - (NSTimeInterval)calculateProjectTime;
+- (NSString *)totalProjectTimeString;
 
 @end
