@@ -7,6 +7,7 @@
 //
 
 #import "ProjectDetailViewController.h"
+#import "AddWorkPeriodViewController.h"
 
 @interface ProjectDetailViewController () <UITextFieldDelegate>
 
@@ -155,7 +156,9 @@
 
 - (void)addButtonPressed
 {
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[AddWorkPeriodViewController new]];
     
+    [self.navigationController presentViewController:navigationController animated:YES completion:nil];
 }
 
 - (void)clockInButtonPressed
