@@ -8,7 +8,7 @@
 
 #import "ProjectDetailViewController.h"
 
-@interface ProjectDetailViewController ()
+@interface ProjectDetailViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 
@@ -74,6 +74,7 @@
     [textField setTranslatesAutoresizingMaskIntoConstraints:NO];
     textField.text = self.project.title;
     textField.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
+    textField.delegate = self;
     [self.view addSubview:textField];
     
     
@@ -170,6 +171,19 @@
 - (void)reportButtonPressed
 {
     
+}
+
+#pragma mark - UITextField Delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.project.title = textField.text;
 }
 
 /*
