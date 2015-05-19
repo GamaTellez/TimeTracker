@@ -12,4 +12,6 @@ static NSString *projectClassString = @"Project";
 
 @interface Project (Helper)
 
+- (NSString *)totalProjectTimeString;
+
 @end
