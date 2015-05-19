@@ -7,6 +7,7 @@
 //
 
 #import "Project+Helper.h"
+#import "WorkPeriod+Helper.h"
 
 @implementation Project (Helper)
 
@@ -14,7 +15,7 @@
 {
     NSTimeInterval totalTime = 0;
     
-    for (WorkPeriod *workPeriod in self.workPeriodsArray)
+    for (WorkPeriod *workPeriod in self.workPeriods)
     {
         NSTimeInterval workPeriodLength = [workPeriod.endDate timeIntervalSinceDate:workPeriod.startDate];
         totalTime += workPeriodLength;
@@ -38,24 +39,24 @@
     NSString *secondsString;
     if (numberOfSecondsRemaining < 10)
     {
-        secondsString = [NSString stringWithFormat:@"0%d", numberOfSecondsRemaining];
+        secondsString = [NSString stringWithFormat:@"0%ld", (long)numberOfSecondsRemaining];
     }
     else
     {
-        secondsString = [NSString stringWithFormat:@"%d", numberOfSecondsRemaining];
+        secondsString = [NSString stringWithFormat:@"%ld", (long)numberOfSecondsRemaining];
     }
     
     NSString *minutesString;
     if (numberOfMinutes < 10)
     {
-        minutesString = [NSString stringWithFormat:@"0%d", numberOfMinutes];
+        minutesString = [NSString stringWithFormat:@"0%ld", (long)numberOfMinutes];
     }
     else
     {
-        minutesString = [NSString stringWithFormat:@"%d", numberOfMinutes];
+        minutesString = [NSString stringWithFormat:@"%ld", (long)numberOfMinutes];
     }
     
-    return [NSString stringWithFormat:@"%d:%@:%@", numberOfHours, minutesString, secondsString];
+    return [NSString stringWithFormat:@"%ld:%@:%@", (long)numberOfHours, minutesString, secondsString];
 }
 
 @end
