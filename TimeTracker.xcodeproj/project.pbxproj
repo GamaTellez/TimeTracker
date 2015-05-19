@@ -24,6 +24,8 @@
 		34A4A8BF1B0BD2F2001EAEE7 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A4A8BE1B0BD2F2001EAEE7 /* WorkPeriod.m */; };
 		34A4A8C21B0BD4C0001EAEE7 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A4A8C11B0BD4C0001EAEE7 /* Stack.m */; };
 		34A4A8C41B0BD5F9001EAEE7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A4A8C31B0BD5F9001EAEE7 /* CoreData.framework */; };
+		34A4A8C71B0BD6C7001EAEE7 /* Project+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A4A8C61B0BD6C7001EAEE7 /* Project+Helper.m */; };
+		34A4A8CA1B0BD6FB001EAEE7 /* WorkPeriod+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A4A8C91B0BD6FB001EAEE7 /* WorkPeriod+Helper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,10 @@
 		34A4A8C01B0BD4C0001EAEE7 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		34A4A8C11B0BD4C0001EAEE7 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		34A4A8C31B0BD5F9001EAEE7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		34A4A8C51B0BD6C7001EAEE7 /* Project+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Project+Helper.h"; sourceTree = "<group>"; };
+		34A4A8C61B0BD6C7001EAEE7 /* Project+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Project+Helper.m"; sourceTree = "<group>"; };
+		34A4A8C81B0BD6FB001EAEE7 /* WorkPeriod+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WorkPeriod+Helper.h"; sourceTree = "<group>"; };
+		34A4A8C91B0BD6FB001EAEE7 /* WorkPeriod+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WorkPeriod+Helper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +138,12 @@
 				3489DA341B071C6300BD1505 /* AddWorkPeriodViewController.m */,
 				34A4A8BD1B0BD2F2001EAEE7 /* WorkPeriod.h */,
 				34A4A8BE1B0BD2F2001EAEE7 /* WorkPeriod.m */,
+				34A4A8C81B0BD6FB001EAEE7 /* WorkPeriod+Helper.h */,
+				34A4A8C91B0BD6FB001EAEE7 /* WorkPeriod+Helper.m */,
 				34A4A8BA1B0BD2F2001EAEE7 /* Project.h */,
 				34A4A8BB1B0BD2F2001EAEE7 /* Project.m */,
+				34A4A8C51B0BD6C7001EAEE7 /* Project+Helper.h */,
+				34A4A8C61B0BD6C7001EAEE7 /* Project+Helper.m */,
 				3489DA0B1B06FBC600BD1505 /* Images.xcassets */,
 				3489DA0D1B06FBC600BD1505 /* LaunchScreen.xib */,
 				3489D9FE1B06FBC500BD1505 /* Supporting Files */,
@@ -270,10 +280,12 @@
 				3489DA321B0707CC00BD1505 /* ProjectListTableViewDataSource.m in Sources */,
 				3489DA071B06FBC600BD1505 /* ProjectListViewController.m in Sources */,
 				3489DA351B071C6300BD1505 /* AddWorkPeriodViewController.m in Sources */,
+				34A4A8C71B0BD6C7001EAEE7 /* Project+Helper.m in Sources */,
 				34A4A8BC1B0BD2F2001EAEE7 /* Project.m in Sources */,
 				34A4A8BF1B0BD2F2001EAEE7 /* WorkPeriod.m in Sources */,
 				3489DA041B06FBC600BD1505 /* AppDelegate.m in Sources */,
 				3489DA2F1B0703AB00BD1505 /* ProjectController.m in Sources */,
+				34A4A8CA1B0BD6FB001EAEE7 /* WorkPeriod+Helper.m in Sources */,
 				3489DA381B0724EC00BD1505 /* WorkPeriodTableViewDataSource.m in Sources */,
 				3489DA011B06FBC600BD1505 /* main.m in Sources */,
 				34A4A8B91B0BD00A001EAEE7 /* Model.xcdatamodeld in Sources */,

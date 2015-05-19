@@ -7,6 +7,7 @@
 //
 
 #import "ProjectController.h"
+#import "Stack.h"
 
 @interface ProjectController()
 
@@ -27,22 +28,51 @@
     return sharedInstance;
 }
 
-- (void)addProject:(Project *)project
+//Create
+- (Project *)createProject
 {
-    NSMutableArray *mutableProjectsArray = [self.projectsArray mutableCopy];
-    
-    [mutableProjectsArray addObject:project];
-    
-    self.projectsArray = [mutableProjectsArray copy];
+    return [NSEntityDescription insertNewObjectForEntityForName:projectClassString inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
 }
 
+//Retrieve
+- (NSArray *)projectsArray
+{
+    return [[Stack sharedInstance].managedObjectContext executeFetchRequest:[NSFetchRequest fetchRequestWithEntityName:projectClassString] error:nil];
+}
+
+//Update
+- (void)save
+{
+    [[Stack sharedInstance].managedObjectContext save:nil];
+}
+
+//Delete
 - (void)deleteProject:(Project *)project
 {
-    NSMutableArray *mutableProjectsArray = [self.projectsArray mutableCopy];
-    
-    [mutableProjectsArray removeObject:project];
-    
-    self.projectsArray = [mutableProjectsArray copy];
+    [project.managedObjectContext deleteObject:project];
+    [self save];
+}
+
+
+//Create
+- (WorkPeriod *)createWorkPeriodInProject:(Project *)project
+{
+    WorkPeriod *workPeriod = [NSEntityDescription insertNewObjectForEntityForName:workPeriodClassString inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
+    workPeriod.project = project;
+    return workPeriod;
+}
+
+//Retrieve
+//Not needed because it is a property on your project, so just query the project
+
+//Update
+//Not needed, the beauty of pointers
+
+//Delete
+- (void)deleteWorkPeriod:(WorkPeriod *)workPeriod
+{
+    [workPeriod.managedObjectContext deleteObject:workPeriod];
+    [self save];
 }
 
 
