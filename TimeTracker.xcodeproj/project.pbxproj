@@ -22,6 +22,8 @@
 		34A4A8B91B0BD00A001EAEE7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34A4A8B71B0BD00A001EAEE7 /* Model.xcdatamodeld */; };
 		34A4A8BC1B0BD2F2001EAEE7 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A4A8BB1B0BD2F2001EAEE7 /* Project.m */; };
 		34A4A8BF1B0BD2F2001EAEE7 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A4A8BE1B0BD2F2001EAEE7 /* WorkPeriod.m */; };
+		34A4A8C21B0BD4C0001EAEE7 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A4A8C11B0BD4C0001EAEE7 /* Stack.m */; };
+		34A4A8C41B0BD5F9001EAEE7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A4A8C31B0BD5F9001EAEE7 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,9 @@
 		34A4A8BB1B0BD2F2001EAEE7 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		34A4A8BD1B0BD2F2001EAEE7 /* WorkPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriod.h; sourceTree = "<group>"; };
 		34A4A8BE1B0BD2F2001EAEE7 /* WorkPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriod.m; sourceTree = "<group>"; };
+		34A4A8C01B0BD4C0001EAEE7 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		34A4A8C11B0BD4C0001EAEE7 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		34A4A8C31B0BD5F9001EAEE7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A4A8C41B0BD5F9001EAEE7 /* CoreData.framework in Frameworks */,
 				3489DA3A1B07311800BD1505 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +93,7 @@
 		3489D9F21B06FBC500BD1505 = {
 			isa = PBXGroup;
 			children = (
+				34A4A8C31B0BD5F9001EAEE7 /* CoreData.framework */,
 				3489DA391B07311800BD1505 /* MessageUI.framework */,
 				3489D9FD1B06FBC500BD1505 /* TimeTracker */,
 				3489DA171B06FBC600BD1505 /* TimeTrackerTests */,
@@ -114,6 +121,8 @@
 				3489DA311B0707CC00BD1505 /* ProjectListTableViewDataSource.m */,
 				3489DA2D1B0703AB00BD1505 /* ProjectController.h */,
 				3489DA2E1B0703AB00BD1505 /* ProjectController.m */,
+				34A4A8C01B0BD4C0001EAEE7 /* Stack.h */,
+				34A4A8C11B0BD4C0001EAEE7 /* Stack.m */,
 				34A4A8B71B0BD00A001EAEE7 /* Model.xcdatamodeld */,
 				3489DA2A1B07032F00BD1505 /* ProjectDetailViewController.h */,
 				3489DA2B1B07032F00BD1505 /* ProjectDetailViewController.m */,
@@ -257,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A4A8C21B0BD4C0001EAEE7 /* Stack.m in Sources */,
 				3489DA321B0707CC00BD1505 /* ProjectListTableViewDataSource.m in Sources */,
 				3489DA071B06FBC600BD1505 /* ProjectListViewController.m in Sources */,
 				3489DA351B071C6300BD1505 /* AddWorkPeriodViewController.m in Sources */,
