@@ -7,6 +7,7 @@
 //
 
 #import "Project.h"
+#import "WorkPeriod.h"
 
 
 @implementation Project
