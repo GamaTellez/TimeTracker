@@ -10,6 +10,7 @@
 #import "AddWorkPeriodViewController.h"
 #import "WorkPeriodTableViewDataSource.h"
 #import <MessageUI/MessageUI.h>
+#import "ProjectController.h"
 
 @interface ProjectDetailViewController () <UITextFieldDelegate, MFMailComposeViewControllerDelegate>
 
@@ -218,7 +219,8 @@
         self.navigationController.navigationBar.barTintColor = [UIColor redColor];
         self.title = @"Clocked Out";
         
-        WorkPeriod *workPeriod = [WorkPeriod new];
+        WorkPeriod *workPeriod = [[ProjectController sharedInstance] createWorkPeriodInProject:self.project];
+        
         workPeriod.startDate = self.clockInDate;
         workPeriod.endDate = [NSDate date];
         
@@ -230,7 +232,8 @@
         
         [addMemoAlert addAction:[UIAlertAction actionWithTitle:@"No Memo" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
             workPeriod.memo = @"";
-            [self.project addWorkPeriod:workPeriod];
+            
+            [[ProjectController sharedInstance] save];
             
             self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
             self.title = @"";
@@ -240,7 +243,8 @@
         [addMemoAlert addAction:[UIAlertAction actionWithTitle:@"Add Work Period" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             
             workPeriod.memo = ((UITextField *)addMemoAlert.textFields[0]).text;
-            [self.project addWorkPeriod:workPeriod];
+            
+            [[ProjectController sharedInstance] save];
             
             self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
             self.title = @"";
@@ -270,7 +274,7 @@
         dateFormatter.dateStyle = NSDateFormatterShortStyle;
         dateFormatter.timeStyle = NSDateFormatterShortStyle;
         
-        for (WorkPeriod *workPeriod in self.project.workPeriodsArray)
+        for (WorkPeriod *workPeriod in self.project.workPeriods)
         {
             NSString *startDateString = [dateFormatter stringFromDate:workPeriod.startDate];
             NSString *endDateString = [dateFormatter stringFromDate:workPeriod.endDate];

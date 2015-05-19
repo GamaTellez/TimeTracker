@@ -133,17 +133,7 @@
 				3489DA341B071C6300BD1505 /* AddWorkPeriodViewController.m */,
 				3489DA2D1B0703AB00BD1505 /* ProjectController.h */,
 				3489DA2E1B0703AB00BD1505 /* ProjectController.m */,
-				34A4A8C01B0BD4C0001EAEE7 /* Stack.h */,
-				34A4A8C11B0BD4C0001EAEE7 /* Stack.m */,
-				34A4A8B71B0BD00A001EAEE7 /* Model.xcdatamodeld */,
-				34A4A8BD1B0BD2F2001EAEE7 /* WorkPeriod.h */,
-				34A4A8BE1B0BD2F2001EAEE7 /* WorkPeriod.m */,
-				34A4A8C81B0BD6FB001EAEE7 /* WorkPeriod+Helper.h */,
-				34A4A8C91B0BD6FB001EAEE7 /* WorkPeriod+Helper.m */,
-				34A4A8CB1B0BDC06001EAEE7 /* Project.h */,
-				34A4A8CC1B0BDC06001EAEE7 /* Project.m */,
-				34A4A8C51B0BD6C7001EAEE7 /* Project+Helper.h */,
-				34A4A8C61B0BD6C7001EAEE7 /* Project+Helper.m */,
+				34A4A8CE1B0BDDEF001EAEE7 /* Model */,
 				3489DA0B1B06FBC600BD1505 /* Images.xcassets */,
 				3489DA0D1B06FBC600BD1505 /* LaunchScreen.xib */,
 				3489D9FE1B06FBC500BD1505 /* Supporting Files */,
@@ -175,6 +165,40 @@
 				3489DA191B06FBC600BD1505 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		34A4A8CE1B0BDDEF001EAEE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34A4A8C01B0BD4C0001EAEE7 /* Stack.h */,
+				34A4A8C11B0BD4C0001EAEE7 /* Stack.m */,
+				34A4A8B71B0BD00A001EAEE7 /* Model.xcdatamodeld */,
+				34A4A8D01B0BDE06001EAEE7 /* WorkPeriod */,
+				34A4A8CF1B0BDDFE001EAEE7 /* Project */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		34A4A8CF1B0BDDFE001EAEE7 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				34A4A8CB1B0BDC06001EAEE7 /* Project.h */,
+				34A4A8CC1B0BDC06001EAEE7 /* Project.m */,
+				34A4A8C51B0BD6C7001EAEE7 /* Project+Helper.h */,
+				34A4A8C61B0BD6C7001EAEE7 /* Project+Helper.m */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		34A4A8D01B0BDE06001EAEE7 /* WorkPeriod */ = {
+			isa = PBXGroup;
+			children = (
+				34A4A8BD1B0BD2F2001EAEE7 /* WorkPeriod.h */,
+				34A4A8BE1B0BD2F2001EAEE7 /* WorkPeriod.m */,
+				34A4A8C81B0BD6FB001EAEE7 /* WorkPeriod+Helper.h */,
+				34A4A8C91B0BD6FB001EAEE7 /* WorkPeriod+Helper.m */,
+			);
+			name = WorkPeriod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -107,10 +107,10 @@
         
         NSString *projectTitle = ((UITextField *)addProjectAlert.textFields[0]).text;
         
-        Project *project = [Project new];
+        Project *project = [[ProjectController sharedInstance] createProject];
         project.title = projectTitle;
         
-        [[ProjectController sharedInstance] addProject:project];
+        [[ProjectController sharedInstance] save];
         
         [self.tableView reloadData];
     }]];

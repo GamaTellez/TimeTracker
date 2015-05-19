@@ -7,6 +7,8 @@
 //
 
 #import "WorkPeriodTableViewDataSource.h"
+#import "WorkPeriod+Helper.h"
+#import "ProjectController.h"
 
 static NSString *cellID = @"cellID";
 
@@ -14,7 +16,7 @@ static NSString *cellID = @"cellID";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.project.workPeriodsArray count];
+    return [self.project.workPeriods count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -25,7 +27,7 @@ static NSString *cellID = @"cellID";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     
-    WorkPeriod *workPeriod = self.project.workPeriodsArray[indexPath.row];
+    WorkPeriod *workPeriod = self.project.workPeriods[indexPath.row];
     
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     dateFormatter.dateStyle = NSDateFormatterShortStyle;
@@ -44,8 +46,9 @@ static NSString *cellID = @"cellID";
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        WorkPeriod *workPeriod = self.project.workPeriodsArray[indexPath.row];
-        [self.project deleteWorkPeriod:workPeriod];
+        WorkPeriod *workPeriod = self.project.workPeriods[indexPath.row];
+        
+        [[ProjectController sharedInstance] deleteWorkPeriod:workPeriod];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }

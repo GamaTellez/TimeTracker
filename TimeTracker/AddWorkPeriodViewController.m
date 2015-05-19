@@ -8,6 +8,7 @@
 
 #import "AddWorkPeriodViewController.h"
 #import "WorkPeriod.h"
+#import "ProjectController.h"
 
 @interface AddWorkPeriodViewController ()
 
@@ -158,12 +159,13 @@
     
     [addMemoAlert addAction:[UIAlertAction actionWithTitle:@"Add Work Period" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
-        WorkPeriod *workPeriod = [WorkPeriod new];
+        WorkPeriod *workPeriod = [[ProjectController sharedInstance] createWorkPeriodInProject:self.project];
+        
         workPeriod.startDate = self.startDatePicker.date;
         workPeriod.endDate = self.endDatePicker.date;
         workPeriod.memo = ((UITextField *)addMemoAlert.textFields[0]).text;
         
-        [self.project addWorkPeriod:workPeriod];
+        [[ProjectController sharedInstance] save];
         
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     }]];
