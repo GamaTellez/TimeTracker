@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@import CoreData;
 
 @interface Stack : NSObject
+
++ (Stack *)sharedInstance;
+
+@property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
 
 @end
